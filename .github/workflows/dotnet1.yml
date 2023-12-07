@@ -3,8 +3,15 @@ name: .NET
 on:
   push:
     branches: [ "master" ]
+    tags:
+      - '*'
   pull_request:
     branches: [ "master" ]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: '版本号'
+        required: true
 permissions:
   contents: write
   discussions: write
