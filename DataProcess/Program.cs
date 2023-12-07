@@ -104,7 +104,11 @@ class Program
 
         return cleanedFileName;
     }
-
+    /// <summary>
+    /// 清理文件名中的非法字符
+    /// </summary>
+    /// <param name="fileName"></param>
+    /// <returns></returns>
     static string CleanFileName(string fileName)
     {
         char[] invalidChars = Path.GetInvalidFileNameChars();
