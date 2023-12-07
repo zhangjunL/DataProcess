@@ -46,7 +46,15 @@ class Program
                 SplitAndCopyStyles(options.SourceFilePath, options.TargetDirectory, options.RowsPerFile, options.StartCell, options.EndCell, options.FileNameTemplate);
             });
     }
-
+    /// <summary>
+    /// 拆分Excel文件并复制样式
+    /// </summary>
+    /// <param name="sourceFilePath"></param>
+    /// <param name="targetDirectory"></param>
+    /// <param name="rowsPerFile"></param>
+    /// <param name="startCell"></param>
+    /// <param name="endCell"></param>
+    /// <param name="fileNameTemplate"></param>
     static void SplitAndCopyStyles(string sourceFilePath, string targetDirectory, int rowsPerFile, string startCell, string endCell, string fileNameTemplate)
     {
         ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
@@ -92,7 +100,12 @@ class Program
             Console.WriteLine("所有文件已完成");
         }
     }
-
+    /// <summary>
+    /// 从工作表中生成文件名
+    /// </summary>
+    /// <param name="fileNameTemplate"></param>
+    /// <param name="worksheet"></param>
+    /// <returns></returns>
     static string GenerateFileName(string fileNameTemplate, ExcelWorksheet worksheet)
     {
         var cleanedFileName = CleanFileName(fileNameTemplate);
