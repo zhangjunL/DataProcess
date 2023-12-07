@@ -84,8 +84,12 @@ class Program
                     Directory.CreateDirectory(targetDirectory);
 
                     targetPackage.SaveAs(new FileInfo(targetFilePath));
+
+                    Console.WriteLine($"已保存文件 {targetFilePath}");
+                    
                 }
             }
+            Console.WriteLine("所有文件已完成");
         }
     }
 
