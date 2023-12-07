@@ -27,8 +27,11 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
+
     - name: Test
       run: dotnet test --no-build --verbosity normal
+    - name: Publish
+      run: dotnet publish -c Release -r win-x64 -p:PublishReadyToRun=true -p:PublishSingleFile=true
 
   release:
     runs-on: ubuntu-latest
