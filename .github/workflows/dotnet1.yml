@@ -39,6 +39,8 @@ jobs:
       run: |
           cd ${{ github.workspace }}
           pwd && ls
+          cd ./DataProcess/bin
+          ls
           content=$(tac ./CHANGELOG.md | grep -m1 "##" -B 1000 | tac)
           echo "Release content: $content"
           echo "release_content<<EOF" >> $GITHUB_OUTPUT
