@@ -48,14 +48,14 @@ jobs:
           echo "$content" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
     - name: file-list
-      run: find -name '*.exe'
+      run: find /DataProcess/DataProcess/DataProcess/bin -name '*.exe'
       
     - name: Upload release asset
       id: upload-release-asset 
       uses: softprops/action-gh-release@v1
       with:
           files: |
-           ./bin/Release/net7.0/win-x64/publish/*.exe
+           /DataProcess/DataProcess/DataProcess/bin/Release/net7.0/win-x64/publish/*.exe
           token: ${{ secrets.GITHUB_TOKEN }}
           name: DataProcess-V${{ github.event.inputs.version }}
           tag_name: ${{ github.event.inputs.version }}
