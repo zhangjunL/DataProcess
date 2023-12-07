@@ -27,8 +27,11 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
+
     - name: Test
       run: dotnet test --no-build --verbosity normal
+    - name: Publish
+      run: dotnet publish -c Release -r win-x64 -p:PublishReadyToRun=true -p:PublishSingleFile=true
 
   release:
     runs-on: ubuntu-latest
@@ -44,12 +47,15 @@ jobs:
           echo "release_content<<EOF" >> $GITHUB_OUTPUT
           echo "$content" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
+    - name: file-list
+      run: find -name '*.exe'
+      
     - name: Upload release asset
       id: upload-release-asset 
       uses: softprops/action-gh-release@v1
       with:
           files: |
-           bin/**/*/*.exe
+           bin/Release/net7.0/win-x64/publish/*.exe
           token: ${{ secrets.GITHUB_TOKEN }}
           name: DataProcess-V${{ github.event.inputs.version }}
           tag_name: ${{ github.event.inputs.version }}
