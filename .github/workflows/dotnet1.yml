@@ -49,7 +49,7 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
           files: |
-           bin/**/*.exe
+           bin/**/*/*.exe
           token: ${{ secrets.GITHUB_TOKEN }}
           name: DataProcess-V${{ github.event.inputs.version }}
           tag_name: ${{ github.event.inputs.version }}
