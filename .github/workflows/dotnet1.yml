@@ -33,7 +33,7 @@ jobs:
       uses: actions/create-release@v1
       with:
         files: |
-          bin/**/*.dll
+          bin/**/*.exe
         token: ${{ secrets.GITHUB_TOKEN }}
         release_name: Release ${{ github.sha }}
 
