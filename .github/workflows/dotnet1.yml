@@ -3,8 +3,6 @@ name: .NET
 on:
   push:
     branches: [ "master" ]
-    tags:
-      - '*'
   pull_request:
     branches: [ "master" ]
   workflow_dispatch:
@@ -19,7 +17,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
     - name: Setup .NET
@@ -52,7 +49,7 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
           files: |
-           bin/**/*.exe
+           bin/**/*/*.exe
           token: ${{ secrets.GITHUB_TOKEN }}
           name: DataProcess-V${{ github.event.inputs.version }}
           tag_name: ${{ github.event.inputs.version }}
