@@ -28,3 +28,17 @@
 ```bash
 ./DataProcess.exe -s "C:\Users\Administrator\Desktop\报表处理\input.xlsx" -t "C:\Users\Administrator\Desktop\报表处理" -r 10 -c A -e M -f "{C2}_{F2}_{E3}.xlsx"
 ```
+
+## 注意事项
+
+- 本工具使用 [EPPlus](https://github.com/JanKallman/EPPlus) 库进行Excel文件的处理。
+- 请确保源文件存在，目标目录存在，并提供正确的命令行参数。
+- 在使用过程中如果遇到问题，请查看错误信息并调整参数。
+
+## 贡献
+
+如果你发现了任何问题，或者有改进的建议，欢迎提出 [issue](https://github.com/zhangjunL/DataProcess/issues) 或提交 [pull request](https://github.com/zhangjunL/DataProcess/pulls)。
+
+## 许可证
+
+这个工具是基于 MIT 许可证开源的。详细信息请参阅 [LICENSE](LICENSE) 文件。
