@@ -47,7 +47,6 @@ jobs:
           echo "release_content<<EOF" >> $GITHUB_OUTPUT
           echo "$content" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT- name: List Executable Files
-          find /DataProcess/DataProcess/bin/Release/net7.0/win-x64/publish -name '*.exe'
 
     
       
@@ -56,7 +55,7 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
           files: |
-           /DataProcess/DataProcess/bin/Release/net7.0/win-x64/publish/*.exe
+           /DataProcess/bin/Release/net7.0/win-x64/publish/*.exe
           token: ${{ secrets.GITHUB_TOKEN }}
           name: DataProcess-V${{ github.event.inputs.version }}
           tag_name: ${{ github.event.inputs.version }}
