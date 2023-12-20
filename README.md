@@ -26,8 +26,30 @@
 | fileNameTemplate | 文件名模板 |
 ### 示例
 ```bash
-./DataProcess.exe -s "C:\Users\Administrator\Desktop\报表处理\input.xlsx" -t "C:\Users\Administrator\Desktop\报表处理" -r 10 -c A -e M -f "{C2}_{F2}_{E3}.xlsx"
+ DataProcess  -s "C:\Users\Administrator\Desktop\DataProcess\data.xlsx" -t "C:\Users\Administrator\Desktop\DataProcess" -r 8 -c "A" -e "G" -f "{B2}.xlsx"
 ```
+### 文件
+[示例源文件](https://github.com/zhangjunL/DataProcess/files/13727316/data.xlsx)
+#### 以下是分割后的文件
+[张三.xlsx](https://github.com/zhangjunL/DataProcess/files/13727323/default.xlsx)
+[王五.xlsx](https://github.com/zhangjunL/DataProcess/files/13727322/default.xlsx)
+[里斯.xlsx](https://github.com/zhangjunL/DataProcess/files/13727318/default.xlsx)
+### 截图
+
+ 1.分割前的总文件，此文件以8行为一个文件进行分割 所以填写参数  -r 8 ，开始列为A 结束列为G 以B2单元格中的姓名为分割后的文件名
+ 
+![dataprocess示例1](https://github.com/zhangjunL/DataProcess/assets/22259618/bf73246d-554d-4df5-aaf9-480e714087a2)
+
+ 2.分割后生成的文件
+ 
+![dataprocess示例2](https://github.com/zhangjunL/DataProcess/assets/22259618/364cc3a4-7bd4-4904-8508-bd252bc62b85)
+
+ 3.生成文件截图
+ 
+![示例5](https://github.com/zhangjunL/DataProcess/assets/22259618/7c161bf3-fdfc-4f4d-8b59-24be9cc04d54)
+![示例4](https://github.com/zhangjunL/DataProcess/assets/22259618/dda4cf77-8159-4a3e-af20-0e3f39546e1b)
+![示例3](https://github.com/zhangjunL/DataProcess/assets/22259618/4acf0d5f-49c1-4121-800a-8602919999ee)
+
 
 ## 注意事项
 
@@ -42,3 +64,4 @@
 ## 许可证
 
 这个工具是基于 MIT 许可证开源的。详细信息请参阅 [LICENSE](LICENSE) 文件。
+
